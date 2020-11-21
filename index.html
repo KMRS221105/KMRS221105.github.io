@@ -44,8 +44,8 @@ h1, h2, h3, h4, h5 {
     font-family: NanumSquareBold
 }
 
-.trans-title {
-    font-family: NanumSquareExtraBold
+.height-margin {
+    height: 10px;
 }
 
 .main {
@@ -116,7 +116,7 @@ h1, h2, h3, h4, h5 {
     cursor: pointer;
 }
 
-.more-button {
+.arrow-button {
     outline: none;
     border: 1px solid #e7e7e7;
     border-left: 0;
@@ -149,6 +149,10 @@ h1, h2, h3, h4, h5 {
     font-size: 13px;
 }
 
+.map-title {
+    font-family: NanumSquareExtraBold
+}
+
 .gallery {
   position: fixed;
   display: none;
@@ -174,104 +178,7 @@ h1, h2, h3, h4, h5 {
     padding: 15px;
 }
 </style>
-</head>
-<body>
-<div id="invitation">
-    <div id="main" class="main">
-        <img class="main-photo" src="resource/main.JPG">
-        <div class="main-text">
-            <h4>정왕교ㆍ유정은</h4>
-            <p>
-                2021년 3월 21일, 일요일 오후 1시<br>
-                인터컨티넨탈서울코엑스, HL층(지하1층) 하모니볼룸
-            </p>
-        </div>
-    </div>
-
-    <div class="splitter"></div>
-
-    <div id="greeting" class="container">
-        <h4>초대의 글</h4>
-        <br>
-        <p>
-            모든 것이 새로워지는 봄날,<br>
-            사랑하는 두 사람이<br>
-            새 인생을 시작하려 합니다.<br>
-            두 사람의 결혼을 축복해 주시고<br>
-            따뜻한 마음으로 응원해 주신다면<br>
-            큰 힘이 되겠습니다.
-        </p>
-        <br>
-        <p><span class="bold">정연도ㆍ윤경란</span>의 장남 <span class="bold">왕교</span></p>
-        <p><span class="bold">유석열ㆍ이명숙</span>의 장녀 <span class="bold">정은</span></p>
-    </div>
-
-    <div class="splitter"></div>
-
-    <div id="photo" class="container">
-        <h4>포토 갤러리</h4>
-        <br>
-
-        <div id="thumbnail_list" class="thumbnail-list"></div>
-
-        <div id="more_button" class="more-button" onclick="showMorePhotos()">
-            <img class="arrow" src="resource/arrow.png">
-        </div>
-        <div style="height: 10px"></div>
-    </div>
-
-    <div class="splitter"></div>
-
-    <div id="location" class="container">
-        <h4>오시는 길</h4>
-        <div style="height: 10px"></div>
-
-        <img class="map" src="resource/map.jpeg">
-        <br><br>
-
-        <div class="map-info">
-            <p class="trans-title">
-                인터컨티넨탈서울코엑스 TEL 02-3452-2500<br>
-                서울 강남구 봉은사로 524 (삼성동 159)
-            </p>
-            <br>
-            <p class="trans-title">지하철</p>
-            <p>9호선 봉은사역 : 7번 출구 방향 지하로 연결된 코엑스몰 진입 후 아쿠아리움 방향으로 도보로 약 5분</p>
-            <p>2호선 삼성역 : 5번과 6번 출구 사이 지하로 연결된 코엑스몰 진입 후 메가박스 영화관 방향으로 도보로 약 10분</p>
-            </p>
-            <p class="trans-title">버스</p>
-            <p>무역센터 C : 143, 2413, 4419, 500-2, 9407, 9507, 강남01, 강남06, 강남08</p>
-            <p>무역센터 D : 146, 301, 342, 362, 401, N61, 2415, 3217, 3411, 3412, 3414, 4318, 500-2, 9407, 9507, 9607, 강남08, 6006</p>
-            <p>봉은사, 코엑스 북문 E : 342, 3411,3 3412, 500-2</p>
-            <p class="trans-title">자가용</p>
-            <p>호텔 주차장 하객 4시간 무료 주차</p>
-        </div>
-    </div>
-
-    <div class="footer">
-        Developed with ❤️ by WK & JE
-    </div>
-</div>
-
-<div id="gallery" class="gallery">
-    <div class="close-button">
-        <img class="close" src="resource/close.png" onclick="javascript: closeGallery()">
-    </div>
-    <div id="photo_carousel" class="carousel slide" data-ride="carousel" data-interval="false">
-        <div id="carousel_list" class="carousel-inner"></div>
-        <a class="carousel-control-prev" href="#photo_carousel" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#photo_carousel" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-        </a>
-    </div>
-</div>
-
-</body>
-<script type="text/javascript">
+    <script type="text/javascript">
 let PHOTOS = "";
 let VISIBLE_COUNT = "";
 let TOTAL_COUNT = "";
@@ -341,4 +248,100 @@ function enableScroll() {
     $("body").css("overflow", "visible");
 }
 </script>
+</head>
+<body>
+<div id="invitation">
+    <div id="main" class="main">
+        <img class="main-photo" src="resource/main.JPG">
+        <div class="main-text">
+            <h4>정왕교ㆍ유정은</h4>
+            <p>
+                2021년 3월 21일, 일요일 오후 1시<br>
+                인터컨티넨탈서울코엑스, HL층(지하1층) 하모니볼룸
+            </p>
+        </div>
+    </div>
+
+    <div class="splitter"></div>
+
+    <div id="greeting" class="container">
+        <h4>초대의 글</h4>
+        <br>
+        <p>
+            모든 것이 새로워지는 봄날,<br>
+            사랑하는 두 사람이<br>
+            새 인생을 시작하려 합니다.<br>
+            두 사람의 결혼을 축복해 주시고<br>
+            따뜻한 마음으로 응원해 주신다면<br>
+            큰 힘이 되겠습니다.
+        </p>
+        <br>
+        <p><span class="bold">정연도ㆍ윤경란</span>의 장남 <span class="bold">왕교</span></p>
+        <p><span class="bold">유석열ㆍ이명숙</span>의 장녀 <span class="bold">정은</span></p>
+    </div>
+
+    <div class="splitter"></div>
+
+    <div id="photo" class="container">
+        <h4>포토 갤러리</h4>
+        <br>
+
+        <div id="thumbnail_list" class="thumbnail-list"></div>
+
+        <div id="more_button" class="arrow-button" onclick="showMorePhotos()">
+            <img class="arrow" src="resource/arrow.png">
+        </div>
+        <div class="height-margin"></div>
+    </div>
+
+    <div class="splitter"></div>
+
+    <div id="location" class="container">
+        <h4>오시는 길</h4>
+        <div class="height-margin"></div>
+
+        <img class="map" src="resource/map.jpeg">
+        <br><br>
+
+        <div class="map-info">
+            <p class="map-title">
+                인터컨티넨탈서울코엑스 TEL 02-3452-2500<br>
+                서울 강남구 봉은사로 524 (삼성동 159)
+            </p>
+            <br>
+            <p class="map-title">지하철</p>
+            <p>9호선 봉은사역 : 7번 출구 방향 지하로 연결된 코엑스몰 진입 후 아쿠아리움 방향으로 도보로 약 5분</p>
+            <p>2호선 삼성역 : 5번과 6번 출구 사이 지하로 연결된 코엑스몰 진입 후 메가박스 영화관 방향으로 도보로 약 10분</p>
+            </p>
+            <p class="map-title">버스</p>
+            <p>무역센터 C : 143, 2413, 4419, 500-2, 9407, 9507, 강남01, 강남06, 강남08</p>
+            <p>무역센터 D : 146, 301, 342, 362, 401, N61, 2415, 3217, 3411, 3412, 3414, 4318, 500-2, 9407, 9507, 9607, 강남08, 6006</p>
+            <p>봉은사, 코엑스 북문 E : 342, 3411,3 3412, 500-2</p>
+            <p class="map-title">자가용</p>
+            <p>호텔 주차장 하객 4시간 무료 주차</p>
+        </div>
+    </div>
+
+    <div class="footer">
+        Developed with ❤️ by WK & JE
+    </div>
+</div>
+
+<div id="gallery" class="gallery">
+    <div class="close-button">
+        <img class="close" src="resource/close.png" onclick="javascript: closeGallery()">
+    </div>
+    <div id="photo_carousel" class="carousel slide" data-ride="carousel" data-interval="false">
+        <div id="carousel_list" class="carousel-inner"></div>
+        <a class="carousel-control-prev" href="#photo_carousel" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#photo_carousel" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+</div>
+</body>
 </html>
