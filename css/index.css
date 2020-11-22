@@ -174,15 +174,19 @@ h1, h2, h3, h4, h5,
     font-size: 13px;
 }
 
+.contact-table {
+    width: 100%;
+}
+
 .contact-td1 {
     border-right: 1px solid #ececec;
-    width: 28%;
+    width: 33.3%;
+    text-align: center;
 }
 
 .contact-td2 {
-    color: #333333;
-    padding-left: 50px;
-    width: 36%;
+    width: 33.3%;
+    text-align: center;
 }
 
 .gallery {
