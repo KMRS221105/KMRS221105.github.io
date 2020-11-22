@@ -18,31 +18,60 @@
 
 <style>
 @font-face{
-    font-family: 'NanumSquareRegular';
-    src: url(font/NanumSquareRegular.ttf);
+    font-family: 'DX경필명조M';
+    src: url(font/DX경필명조M.TTF);
 }
 
 @font-face{
-    font-family: 'NanumSquareBold';
-    src: url(font/NanumSquareBold.ttf);
+    font-family: 'DX경필명조B';
+    src: url(font/DX경필명조B.TTF);
 }
 
 @font-face{
-    font-family: 'NanumSquareExtraBold';
-    src: url(font/NanumSquareExtraBold.ttf);
+    font-family: 'DX경필명조L';
+    src: url(font/DX경필명조L.TTF);
 }
 
 div, p {
-    font-family: NanumSquareRegular
+    font-family: DX경필명조M
 }
 
-h1, h2, h3, h4, h5 {
-    font-family: NanumSquareBold
-}
-
+h1, h2, h3, h4, h5,
 .bold {
-    font-family: NanumSquareBold
+    font-family: DX경필명조B
 }
+
+.map-title {
+    font-family: DX경필명조B
+}
+
+<!--@font-face{-->
+<!--    font-family: 'NanumSquareRegular';-->
+<!--    src: url(font/NanumSquareRegular.ttf);-->
+<!--}-->
+
+<!--@font-face{-->
+<!--    font-family: 'NanumSquareBold';-->
+<!--    src: url(font/NanumSquareBold.ttf);-->
+<!--}-->
+
+<!--@font-face{-->
+<!--    font-family: 'NanumSquareExtraBold';-->
+<!--    src: url(font/NanumSquareExtraBold.ttf);-->
+<!--}-->
+
+<!--div, p {-->
+<!--    font-family: NanumSquareRegular-->
+<!--}-->
+
+<!--h1, h2, h3, h4, h5,-->
+<!--.bold {-->
+<!--    font-family: NanumSquareBold-->
+<!--}-->
+
+<!--.map-title {-->
+<!--    font-family: NanumSquareExtraBold-->
+<!--}-->
 
 .height-margin {
     height: 10px;
@@ -149,10 +178,6 @@ h1, h2, h3, h4, h5 {
     font-size: 13px;
 }
 
-.map-title {
-    font-family: NanumSquareExtraBold
-}
-
 .gallery {
   position: fixed;
   display: none;
@@ -187,6 +212,10 @@ function setPhotos(json) {
     PHOTOS = json["photo_list"];
     VISIBLE_COUNT = json["visible_photo_count"];
     TOTAL_COUNT = Object.keys(PHOTOS).length;
+
+    $("#main_photo").append(
+        "<img class='main-photo' src='"+json["main_photo"]+"'>"
+    );
 
     $.each(PHOTOS, function(index, photo) {
         $("#thumbnail_list").append(
@@ -252,12 +281,13 @@ function enableScroll() {
 <body>
 <div id="invitation">
     <div id="main" class="main">
-        <img class="main-photo" src="resource/main.JPG">
+        <div id="main_photo"></div>
         <div class="main-text">
             <h4>정왕교ㆍ유정은</h4>
             <p>
                 2021년 3월 21일, 일요일 오후 1시<br>
-                인터컨티넨탈서울코엑스, HL층(지하1층) 하모니볼룸
+                인터컨티넨탈서울코엑스<br>
+                HL층(지하1층) 하모니볼룸
             </p>
         </div>
     </div>
