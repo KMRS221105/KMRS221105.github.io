@@ -1,279 +1,25 @@
 <!doctype html>
 <html lang="en">
 <head>
-<!-- Required meta tags -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=edge">
 
-<!-- Bootstrap CSS -->
+<!-- CSS -->
 <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="css/aos-2.3.1.css">
+<link rel="stylesheet" type="text/css" href="css/index.css">
 
-
-<!-- Optional JavaScript -->
+<!-- JavaScript -->
 <script type="text/javascript" src="js/jquery-3.5.1.min.js"></script>
 <script type="text/javascript" src="js/popper.min.js"></script>
 <script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
 
 <title>3월 21일 왕교❤️정은 결혼식에 초대합니다!</title>
 
-<style>
-@font-face{
-    font-family: 'DX경필명조M';
-    src: url(font/DX경필명조M.TTF);
-}
-
-@font-face{
-    font-family: 'DX경필명조B';
-    src: url(font/DX경필명조B.TTF);
-}
-
-@font-face{
-    font-family: 'DX경필명조L';
-    src: url(font/DX경필명조L.TTF);
-}
-
-div, p {
-    font-family: DX경필명조M
-}
-
-h1, h2, h3, h4, h5,
-.bold {
-    font-family: DX경필명조B
-}
-
-.map-title {
-    font-family: DX경필명조B
-}
-
-<!--@font-face{-->
-<!--    font-family: 'NanumSquareRegular';-->
-<!--    src: url(font/NanumSquareRegular.ttf);-->
-<!--}-->
-
-<!--@font-face{-->
-<!--    font-family: 'NanumSquareBold';-->
-<!--    src: url(font/NanumSquareBold.ttf);-->
-<!--}-->
-
-<!--@font-face{-->
-<!--    font-family: 'NanumSquareExtraBold';-->
-<!--    src: url(font/NanumSquareExtraBold.ttf);-->
-<!--}-->
-
-<!--div, p {-->
-<!--    font-family: NanumSquareRegular-->
-<!--}-->
-
-<!--h1, h2, h3, h4, h5,-->
-<!--.bold {-->
-<!--    font-family: NanumSquareBold-->
-<!--}-->
-
-<!--.map-title {-->
-<!--    font-family: NanumSquareExtraBold-->
-<!--}-->
-
-.height-margin {
-    height: 10px;
-}
-
-.main {
-    text-align: center;
-}
-
-.main-photo {
-    width: 100%;
-}
-
-.main-text {
-    text-align: center;
-    position: absolute;
-    top: 15%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    min-width: 350px;
-}
-
-.container {
-    padding-top: 20px;
-    padding-bottom: 20px;
-    text-align: center;
-}
-
-.splitter {
-    height: 20px;
-    background-color: #e6e6e6;
-}
-
-.footer {
-    height: 80px;
-    background-color: #e6e6e6;
-    padding-top: 28px;
-    text-align: center;
-}
-
-.thumbnail-list {
-    outline: none;
-    display: inline-block;
-    margin: auto;
-    width: 100%;
-}
-
-.thumbnail-box {
-    display: inline;
-    position: relative;
-    float: left;
-    width: 33.33%;
-    padding: 1px;
-}
-
-.thumbnail-wrapper {
-    position: relative;
-    padding-top: 100%;
-    overflow: hidden;
-}
-
-.thumbnail {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    cursor: pointer;
-}
-
-.arrow-button {
-    outline: none;
-    border: 1px solid #e7e7e7;
-    border-left: 0;
-    border-right: 0;
-    cursor: pointer;
-    height: 43px;
-    margin-top: 20px;
-    padding-top: 9px;
-    text-align: center;
-}
-
-.arrow {
-    cursor: pointer;
-    text-align: center;
-    outline: none;
-    color: #333333;
-    border: 0;
-    height: 20px;
-    width: auto;
-}
-
-.map {
-    width: 100%;
-}
-
-.map-info {
-    text-align: left;
-    padding-left: 30px;
-    padding-right: 30px;
-    font-size: 13px;
-}
-
-.gallery {
-  position: fixed;
-  display: none;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0,0,0,0.90);
-  z-index: 2;
-}
-
-.close-button {
-    text-align: center;
-    height: 50px;
-}
-
-.close {
-    cursor: pointer;
-    height: 100%;
-    width: auto;
-    padding: 15px;
-}
-</style>
 <script type="text/javascript">
-let PHOTOS = "";
-let VISIBLE_COUNT = "";
-let TOTAL_COUNT = "";
 
-function setPhotos(json) {
-    PHOTOS = json["photo_list"];
-    VISIBLE_COUNT = json["visible_photo_count"];
-    TOTAL_COUNT = Object.keys(PHOTOS).length;
-
-    $.each(PHOTOS, function(index, photo) {
-        $("#thumbnail_list").append(
-            "<div id='"+index+"' class='thumbnail-box'>" +
-            "<div class='thumbnail-wrapper'>" +
-                "<img class='thumbnail' src='"+photo+"' onclick='javascript:openGallery("+index+")'>" +
-            "</div>" +
-            "</div>"
-        );
-
-        if(index > VISIBLE_COUNT) $("#"+index).hide();
-    });
-
-    $.each(PHOTOS, function(index, photo) {
-        if(index == 1) {
-            $("#carousel_list").append(
-                "<div class='carousel-item active'>" +
-                    "<img class='d-block w-100' src='"+photo+"'>" +
-                "</div>"
-            );
-        } else {
-            $("#carousel_list").append(
-                "<div class='carousel-item'>" +
-                    "<img class='d-block w-100' src='"+photo+"'>" +
-                "</div>"
-            );
-        }
-    });
-}
-
-$.getJSON("resource/photo.json", function(json) {
-    setPhotos(json);
-});
-
-function showMorePhotos() {
-    for(index=VISIBLE_COUNT+1; index<=TOTAL_COUNT; index++) {
-        $("#"+index).show();
-    }
-    $("#more_button").hide();
-}
-
-function openGallery(photo_index) {
-    $(".carousel").carousel(photo_index-1);
-    $("#gallery").css("display", "block");
-    disableScroll();
-}
-
-function closeGallery() {
-    $("#gallery").css("display", "none");
-    enableScroll();
-}
-
-function disableScroll() {
-    $("body").css("overflow", "hidden");
-    $("html").css("scrollTop", window.scrollY);
-}
-
-function enableScroll() {
-    $("body").css("overflow", "visible");
-}
 </script>
 </head>
 <body>
@@ -308,6 +54,21 @@ function enableScroll() {
         <p><span class="bold">유석열ㆍ이명숙</span>의 장녀 <span class="bold">정은</span></p>
     </div>
 
+    <hr data-aos="fade-up">
+
+    <div id="contact" class="container" data-aos="fade-up">
+        <div class="row">
+            <div class="col">
+                <img src="resource/groom.jpeg" class="round-image" data-toggle="modal" data-target="#groom_contact">
+                <p class="contact-text" data-toggle="modal" data-target="#groom_contact">신랑측에 연락하기</p>
+            </div>
+            <div class="col">
+                <img src="resource/bride.JPG" class="round-image" data-toggle="modal" data-target="#bride_contact">
+                <p class="contact-text" data-toggle="modal" data-target="#bride_contact">신부측에 연락하기</p>
+            </div>
+        </div>
+    </div>
+
     <div class="splitter"></div>
 
     <div id="photo" class="container" data-aos="fade-up">
@@ -317,7 +78,7 @@ function enableScroll() {
         <div id="thumbnail_list" class="thumbnail-list"></div>
 
         <div id="more_button" class="arrow-button" onclick="showMorePhotos()">
-            <img class="arrow" src="resource/arrow.png">
+            <img class="arrow" src="resource/arrow.svg">
         </div>
         <div class="height-margin"></div>
     </div>
@@ -355,9 +116,121 @@ function enableScroll() {
     </div>
 </div>
 
+<div id="groom_contact" class="modal fade" tabindex="-1" aria-hidden="true" data-backdrop="static">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">신랑측에 연락하기</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="card">
+                    <div class="card-body">
+                        <table cellspacing="0" cellpadding="0">
+                            <tbody>
+                                <tr>
+                                    <td class="contact-td1">신랑</td>
+                                    <td class="contact-td2"><a href="tel:01093491033"><img class="contact_button_icon" src="resource/phone.svg"> 전화하기</a></td>
+                                    <td class="contact-td2"><a href="sms:01093491033"><img class="contact_button_icon" src="resource/sms.svg"> 문자하기</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <br>
+                <div class="card">
+                    <div class="card-body">
+                        <table cellspacing="0" cellpadding="0">
+                            <tbody>
+                            <tr>
+                                <td class="contact-td1">부) 정연도</td>
+                                <td class="contact-td2"><a href="tel:01034277343"><img class="contact_button_icon" src="resource/phone.svg"> 전화하기</a></td>
+                                <td class="contact-td2"><a href="sms:01034277343"><img class="contact_button_icon" src="resource/sms.svg"> 문자하기</a></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <br>
+                <div class="card">
+                    <div class="card-body">
+                        <table cellspacing="0" cellpadding="0">
+                            <tbody>
+                            <tr>
+                                <td class="contact-td1">모) 윤경란</td>
+                                <td class="contact-td2"><a href="tel:01026955969"><img class="contact_button_icon" src="resource/phone.svg"> 전화하기</a></td>
+                                <td class="contact-td2"><a href="sms:01026955969"><img class="contact_button_icon" src="resource/sms.svg"> 문자하기</a></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="bride_contact" class="modal fade" tabindex="-1" aria-hidden="true" data-backdrop="static">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">신부측에 연락하기</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="card">
+                    <div class="card-body">
+                        <table cellspacing="0" cellpadding="0">
+                            <tbody>
+                            <tr>
+                                <td class="contact-td1">신부</td>
+                                <td class="contact-td2"><a href="tel:01092868541"><img class="contact_button_icon" src="resource/phone.svg"> 전화하기</a></td>
+                                <td class="contact-td2"><a href="sms:01092868541"><img class="contact_button_icon" src="resource/sms.svg"> 문자하기</a></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <br>
+                <div class="card">
+                    <div class="card-body">
+                        <table cellspacing="0" cellpadding="0">
+                            <tbody>
+                            <tr>
+                                <td class="contact-td1">부) 유석열</td>
+                                <td class="contact-td2"><a href="tel:01052372904"><img class="contact_button_icon" src="resource/phone.svg"> 전화하기</a></td>
+                                <td class="contact-td2"><a href="sms:01052372904"><img class="contact_button_icon" src="resource/sms.svg"> 문자하기</a></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <br>
+                <div class="card">
+                    <div class="card-body">
+                        <table cellspacing="0" cellpadding="0">
+                            <tbody>
+                            <tr>
+                                <td class="contact-td1">모) 이명숙</td>
+                                <td class="contact-td2"><a href="tel:01099824680"><img class="contact_button_icon" src="resource/phone.svg"> 전화하기</a></td>
+                                <td class="contact-td2"><a href="sms:01099824680"><img class="contact_button_icon" src="resource/sms.svg"> 문자하기</a></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 <div id="gallery" class="gallery">
     <div class="close-button">
-        <img class="close" src="resource/close.png" onclick="javascript: closeGallery()">
+        <img class="close" src="resource/close.svg" onclick="javascript: closeGallery()">
     </div>
     <div id="photo_carousel" class="carousel slide" data-ride="carousel" data-interval="false">
         <div id="carousel_list" class="carousel-inner"></div>
