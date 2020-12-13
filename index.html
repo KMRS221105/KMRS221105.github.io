@@ -20,6 +20,11 @@ gtag('config', 'G-VGB7W31YJF');
 <link rel="stylesheet" type="text/css" href="css/aos-2.3.1.css">
 <link rel="stylesheet" type="text/css" href="css/index.css">
 
+<!--Firebase Database-->
+<script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-firestore.js"></script>
+<script type="text/javascript" src="js/firestore.js"></script>
+
 <!-- JavaScript -->
 <script type="text/javascript" src="js/jquery-3.5.1.min.js"></script>
 <script type="text/javascript" src="js/popper.min.js"></script>
@@ -45,6 +50,7 @@ gtag('config', 'G-VGB7W31YJF');
     <div class="splitter"></div>
 
     <div id="greeting" class="container" data-aos="fade-up">
+        <div class="height-margin"></div>
         <h4>초대의 글</h4>
         <br>
         <p>
@@ -78,12 +84,13 @@ gtag('config', 'G-VGB7W31YJF');
     <div class="splitter"></div>
 
     <div id="photo" class="container" data-aos="fade-up">
+        <div class="height-margin"></div>
         <h4>포토 갤러리</h4>
         <br>
 
         <div id="thumbnail_list" class="thumbnail-list"></div>
 
-        <div id="more_button" class="arrow-button" onclick="showMorePhotos()">
+        <div id="more_button" class="arrow-button" onclick="javascript: showMorePhotos()">
             <img class="arrow" src="resource/arrow.svg">
         </div>
         <div class="height-margin"></div>
@@ -92,6 +99,7 @@ gtag('config', 'G-VGB7W31YJF');
     <div class="splitter"></div>
 
     <div id="location" class="container" data-aos="fade-up">
+        <div class="height-margin"></div>
         <h4>오시는 길</h4>
         <div class="height-margin"></div>
 
@@ -118,8 +126,19 @@ gtag('config', 'G-VGB7W31YJF');
         </div>
     </div>
 
+    <div class="splitter"></div>
+
+    <div id="message" class="container" data-aos="fade-up">
+        <div class="height-margin"></div>
+        <h4>축하 메시지</h4>
+        <br>
+        <button type="button" class="btn btn-dark message-add-button" data-toggle="modal" data-target="#add_message" onclick="javascript: initializeMessageForm()">메시지 남기기</button>
+        <ul id="message_list" class="list-group list-group-flush">
+        </ul>
+    </div>
+
     <div class="footer">
-        Developed with ❤️ by WK & JE
+        Developed with ❤️ by Wangkyo & Jungeun
     </div>
 </div>
 
@@ -230,6 +249,50 @@ gtag('config', 'G-VGB7W31YJF');
                         </table>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="add_message" class="modal fade" tabindex="-1" aria-hidden="true" data-backdrop="static">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">메시지 남기기</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="message_form" class="needs-validation" novalidate>
+                    <div class="form-group">
+                        <label for="name">이름</label>
+                        <input id="name" class="form-control" type="text" placeholder="최대 20자" maxlength="20" required>
+                        <div class="invalid-feedback">
+                            이름을 입력해주세요.
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="comment">메시지</label>
+                        <input id="comment" class="form-control" type="text" placeholder="최대 500자" maxlength="500" required>
+                        <div class="invalid-feedback">
+                            메시지를 입력해주세요.
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">비밀번호</label>
+                        <input id="password" class="form-control" type="text" placeholder="4자리 숫자" maxlength="4" onkeypress="javascript: validateNumber()" required>
+                        <div class="invalid-feedback">
+                            비밀번호를 입력해주세요.
+                        </div>
+                        <small id="passwordHelpBlock" class="form-text text-muted">
+                            메시지를 삭제할 경우 비밀번호가 필요합니다.
+                        </small>
+                    </div>
+                    <div class="submit-button">
+                        <button class="btn btn-dark" type="submit">등록하기</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>

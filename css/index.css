@@ -26,36 +26,6 @@ h1, h2, h3, h4, h5,
     font-family: DX경필명조B
 }
 
-/*
-@font-face{
-    font-family: 'NanumSquareRegular';
-    src: url(../font/NanumSquareRegular.ttf);
-}
-
-@font-face{
-    font-family: 'NanumSquareBold';
-    src: url(../font/NanumSquareBold.ttf);
-}
-
-@font-face{
-    font-family: 'NanumSquareExtraBold';
-    src: url(../font/NanumSquareExtraBold.ttf);
-}
-
-div, p {
-    font-family: NanumSquareRegular
-}
-
-h1, h2, h3, h4, h5,
-.bold {
-    font-family: NanumSquareBold
-}
-
-.map-title {
-    font-family: NanumSquareExtraBold
-}
-*/
-
 .container {
     padding-top: 20px;
     padding-bottom: 20px;
@@ -216,4 +186,32 @@ h1, h2, h3, h4, h5,
     cursor: pointer;
     height: 100%;
     width: auto;
+}
+
+.message-add-button {
+    width: 100%;
+}
+
+.message-card {
+    text-align: left;
+}
+
+.message-delete-button {
+
+}
+
+.message-name {
+    font-size: 13px;
+}
+
+.message-comment {
+    font-size: 13px;
+}
+
+.message-time {
+
+}
+
+.submit-button {
+    text-align:right;
 }

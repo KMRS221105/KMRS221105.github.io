@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Title</title>
+<script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-firestore.js"></script>
+</head>
+<body>
+test
+<script>
+// Initialize Cloud Firestore through Firebase
+firebase.initializeApp({
+  apiKey: "AIzaSyBUZil_3m-xEDFoqB499LOhSZjQF7qhsEk",
+  authDomain: "wedding-invitation-5e95e.firebaseapp.com",
+  projectId: "wedding-invitation-5e95e",
+});
+
+const db = firebase.firestore();
+
+db.collection("comment").add({
+    name: "Kim",
+    text: "Hello",
+    timestamp: firebase.firestore.FieldValue.serverTimestamp()
+})
+.then(function(docRef) {
+    console.log("Document written with ID: ", docRef.id);
+})
+.catch(function(error) {
+    console.error("Error adding document: ", error);
+});
+
+db.collection("comment").get().then((querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+            console.log(doc.data());
+        });
+    });
+</script>
+</body>
+</html>
