@@ -141,7 +141,7 @@ gtag('config', 'G-VGB7W31YJF');
         <ul id="message_list" class="list-group list-group-flush">
         </ul>
 
-        <div id="message_more_button" class="message-more-button" onclick="javascript: openAllMessage()">
+        <div class="message-all-button" onclick="javascript: openAllMessage()">
             전체 보기
         </div>
         <div class="height-margin"></div>
@@ -355,11 +355,19 @@ gtag('config', 'G-VGB7W31YJF');
 </div>
 
 <div id="all_message" class="all-message">
-    <div class="close-button">
-        <img class="close" src="resource/closeb.svg" onclick="javascript: closeAllMessage()">
+    <div class="modal-header">
+        <h5 class="modal-title">축하 메시지</h5>
+        <button type="button" class="close" onclick="javascript: closeAllMessage()">
+            <span aria-hidden="true">&times;</span>
+        </button>
     </div>
-    <ul id="all_message_list" class="list-group list-group-flush">
-    </ul>
+    <div class="all-message-list">
+        <ul id="all_message_list" class="list-group list-group-flush">
+        </ul>
+        <div class="message-all-button" onclick="javascript: closeAllMessage()">
+            닫기
+        </div>
+    </div>
 </div>
 
 <script type="text/javascript" src="js/aos-2.3.1.js"></script>
