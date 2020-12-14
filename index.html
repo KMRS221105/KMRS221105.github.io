@@ -141,14 +141,14 @@ gtag('config', 'G-VGB7W31YJF');
         <ul id="message_list" class="list-group list-group-flush">
         </ul>
 
-        <div id="message_more_button" class="message-more-button" onclick="javascript: showMoreMessages()">
+        <div id="message_more_button" class="message-more-button" onclick="javascript: openAllMessage()">
             전체 보기
         </div>
         <div class="height-margin"></div>
     </div>
 
     <div class="footer">
-        Developed with ❤️ by 왕교 & 정은
+        Developed with ❤️ by Wangkyo & Jungeun
     </div>
 </div>
 
@@ -266,7 +266,7 @@ gtag('config', 'G-VGB7W31YJF');
 
 <div id="gallery" class="gallery">
     <div class="close-button">
-        <img class="close" src="resource/close.svg" onclick="javascript: closeGallery()">
+        <img class="close" src="resource/closew.svg" onclick="javascript: closeGallery()">
     </div>
     <div id="photo_carousel" class="carousel slide" data-ride="carousel" data-interval="false">
         <div id="carousel_list" class="carousel-inner"></div>
@@ -352,6 +352,14 @@ gtag('config', 'G-VGB7W31YJF');
             </div>
         </div>
     </div>
+</div>
+
+<div id="all_message" class="all-message">
+    <div class="close-button">
+        <img class="close" src="resource/closeb.svg" onclick="javascript: closeAllMessage()">
+    </div>
+    <ul id="all_message_list" class="list-group list-group-flush">
+    </ul>
 </div>
 
 <script type="text/javascript" src="js/aos-2.3.1.js"></script>

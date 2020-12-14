@@ -150,7 +150,6 @@ function updateMessages() {
 }
 
 function setMessages(messages) {
-console.log(messages);
     MESSAGES = messages;
     TOTAL_MESSAGE_COUNT = Object.keys(MESSAGES).length;
     VISIBLE_MESSAGE_COUNT = 5;
@@ -158,6 +157,8 @@ console.log(messages);
     $("#message_list").empty();
 
     $.each(MESSAGES, function(index, message) {
+        if(index == VISIBLE_MESSAGE_COUNT) return false;
+
         $("#message_list").append(
             "<li id='m"+index+"' class='list-group-item message-item'>" +
                 "<div class='card-body message-card'>" +
@@ -173,12 +174,9 @@ console.log(messages);
                     "</div>" +
                     "<p class='card-text message-comment'>" + message["comment"] + "</p>" +
                     "<p class='card-text message-time'><small class='text-muted'>" + formatDate(message["timestamp"].toDate()) + "</small></p>" +
-                    "<input type='hidden' id='p"+index+"' value='" + message["password"] + "'>" +
                 "</div>" +
             "</li>"
         );
-
-        if(index > VISIBLE_MESSAGE_COUNT) $("#m"+index).hide();
     });
 }
 
@@ -207,10 +205,35 @@ function formatDate(timestamp){
     return year + "-" + month + "-" + day + " " + hours + ":" + minutes + ":" + seconds;
 }
 
-function showMoreMessages() {
-//    $("#gallery").css("display", "block");
-    for(index=VISIBLE_MESSAGE_COUNT+1; index<=TOTAL_MESSAGE_COUNT; index++) {
-        $("#m"+index).show();
-    }
-    $("#more_button").hide();
+function openAllMessage() {
+    $("#all_message_list").empty();
+
+    $.each(MESSAGES, function(index, message) {
+        $("#all_message_list").append(
+            "<li id='m"+index+"' class='list-group-item message-item'>" +
+                "<div class='card-body message-card'>" +
+                    "<div class='row'>" +
+                        "<div class='col'>" +
+                            "<h5 class='card-title message-name'>" + message["name"] + "</h5>" +
+                        "</div>" +
+                        "<div class='col'>" +
+                            "<button type='button' class='close' data-toggle='modal' data-target='#delete_message' onclick='javascript: initializeDeleteMessageForm(" + index + ")'>" +
+                                "<span aria-hidden='true'>&times;</span>" +
+                            "</button>" +
+                        "</div>" +
+                    "</div>" +
+                    "<p class='card-text message-comment'>" + message["comment"] + "</p>" +
+                    "<p class='card-text message-time'><small class='text-muted'>" + formatDate(message["timestamp"].toDate()) + "</small></p>" +
+                "</div>" +
+            "</li>"
+        );
+    });
+
+    $("#all_message").css("display", "block");
+    disableScroll();
+}
+
+function closeAllMessage() {
+    $("#all_message").css("display", "none");
+    enableScroll();
 }
