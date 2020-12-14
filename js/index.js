@@ -2,10 +2,6 @@ let PHOTOS = "";
 let VISIBLE_PHOTO_COUNT = "";
 let TOTAL_PHOTO_COUNT = "";
 
-let MESSAGES = "";
-let VISIBLE_MESSAGE_COUNT = "";
-let TOTAL_MESSAGE_COUNT = "";
-
 $(document).ready(function() {
     try {
         dbInitialize();
@@ -78,6 +74,11 @@ function enableScroll() {
     $("body").css("overflow", "visible");
 }
 
+//  Messages
+let MESSAGES = "";
+let VISIBLE_MESSAGE_COUNT = "";
+let TOTAL_MESSAGE_COUNT = "";
+
 (function() {
   'use strict';
   window.addEventListener('load', function() {
@@ -89,23 +90,42 @@ function enableScroll() {
                 event.stopPropagation();
             } else {
                 event.preventDefault();
-                $('#add_message').modal('hide')
-
-                const name = $("#name").val();
-                const comment = $("#comment").val();
-                const password = $("#password").val();
-
-                try {
-                    dbCreateMessage(name, comment, password);
-                } catch (error) {
-                    console.error(error);
-                }
+                submitForm(form.id);
             }
             form.classList.add('was-validated');
         }, false);
     });
   }, false);
 })();
+
+function submitForm(form_id) {
+    try {
+        if(form_id == "add_message_form") {
+            const name = $("#name").val();
+            const comment = $("#comment").val();
+            const password = $("#password").val();
+
+            $('#add_message').modal('hide');
+            dbCreateMessage(name, comment, password);
+        } else {
+            const message = MESSAGES[$("#form_index").val()];
+            const password_check = $("#password_check").val();
+
+            if(message["password"] == password_check) {
+                $('#delete_message').modal('hide');
+                dbDeleteMessage(message["id"]);
+            } else {
+                $("#alert").html(
+                    "<div class='alert alert-danger' role='alert' style='margin-bottom: 0px; margin-top: 16px'>" +
+                        "비밀번호가 일치하지 않습니다." +
+                    "</div>"
+                );
+            }
+        }
+    } catch (error) {
+        console.error(error);
+    }
+}
 
 function initializeMessageForm() {
     var forms = document.getElementsByClassName('needs-validation');
@@ -115,10 +135,10 @@ function initializeMessageForm() {
     });
 }
 
-function validateNumber() {
-    if((event.keyCode<48)||(event.keyCode>57)) {
-        event.returnValue=false;
-    }
+function initializeDeleteMessageForm(index) {
+    initializeMessageForm();
+    $("#form_index").val(index);
+    $("#alert").html("");
 }
 
 function updateMessages() {
@@ -130,6 +150,7 @@ function updateMessages() {
 }
 
 function setMessages(messages) {
+console.log(messages);
     MESSAGES = messages;
     TOTAL_MESSAGE_COUNT = Object.keys(MESSAGES).length;
     VISIBLE_MESSAGE_COUNT = 5;
@@ -145,7 +166,7 @@ function setMessages(messages) {
                             "<h5 class='card-title message-name'>" + message["name"] + "</h5>" +
                         "</div>" +
                         "<div class='col'>" +
-                            "<button type='button' class='close message-delete-button' data-toggle='modal' data-target='#delete_message' onclick='javascript: deleteMessage(" + index + ")'>" +
+                            "<button type='button' class='close' data-toggle='modal' data-target='#delete_message' onclick='javascript: initializeDeleteMessageForm(" + index + ")'>" +
                                 "<span aria-hidden='true'>&times;</span>" +
                             "</button>" +
                         "</div>" +
@@ -159,6 +180,12 @@ function setMessages(messages) {
 
         if(index > VISIBLE_MESSAGE_COUNT) $("#m"+index).hide();
     });
+}
+
+function validateNumber() {
+    if((event.keyCode < 48) || (event.keyCode > 57)) {
+        event.returnValue = false;
+    }
 }
 
 function formatDate(timestamp){
@@ -186,12 +213,4 @@ function showMoreMessages() {
         $("#m"+index).show();
     }
     $("#more_button").hide();
-}
-
-function deleteMessage(message) {
-    try {
-
-    } catch (error) {
-        console.error(error);
-    }
 }

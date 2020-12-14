@@ -210,19 +210,25 @@ h1, h2, h3, h4, h5,
 
 .message-card {
     text-align: left;
-    padding-bottom: 0px;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
 .message-name {
     font-size: 13px;
+    margin: 0px;
+    padding-top: 4px;
 }
 
 .message-comment {
     font-size: 13px;
+    margin-top: 5px;
+    margin-bottom: 12px;
 }
 
 .message-time {
     font-size: 12px;
+    margin: 0px;
 }
 
 .message-more-button {

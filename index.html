@@ -18,7 +18,7 @@ gtag('config', 'G-VGB7W31YJF');
 <!--Open Graph-->
 <meta property="og:title" content="3월 21일 왕교❤️정은 결혼식에 초대합니다">
 <meta property="og:description" content="모바일청첩장">
-<meta property="og:image" content="resource/main.jpg">
+<meta property="og:image" content="https://wkje0321.github.io/resource/main.jpg">
 
 <!-- CSS -->
 <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
@@ -291,7 +291,7 @@ gtag('config', 'G-VGB7W31YJF');
                 </button>
             </div>
             <div class="modal-body">
-                <form class="needs-validation" novalidate>
+                <form id="add_message_form" class="needs-validation" novalidate>
                     <div class="form-group">
                         <label for="name">이름</label>
                         <input id="name" class="form-control" type="text" placeholder="최대 20자" maxlength="20" required>
@@ -335,16 +335,15 @@ gtag('config', 'G-VGB7W31YJF');
                 </button>
             </div>
             <div class="modal-body">
-                <form class="needs-validation" novalidate>
+                <form id="delete_message_form" class="needs-validation" novalidate>
                     <div class="form-group">
+                        <input id="form_index" type="hidden" value="">
                         <label for="password_check">비밀번호</label>
                         <input id="password_check" class="form-control" type="text" placeholder="4자리 숫자" maxlength="4" onkeypress="javascript: validateNumber()" required>
                         <div class="invalid-feedback">
                             비밀번호를 입력해주세요.
                         </div>
-                        <small class="form-text text-muted">
-                            메시지 등록시 입력한 비밀번호가 필요합니다.
-                        </small>
+                        <div id="alert"></div>
                     </div>
                     <div class="submit-button">
                         <button class="btn btn-dark" type="submit">삭제하기</button>
