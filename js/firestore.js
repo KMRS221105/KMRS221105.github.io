@@ -11,9 +11,12 @@ function dbInitialize() {
 }
 
 function dbReadAllMessages() {
-    db.collection("message").get().then((querySnapshot) => {
-        console.log(querySnapshot.docs.map(doc => doc.data()));
-        setMessages(querySnapshot.docs.map(doc => doc.data()));
+    db.collection("message").orderBy("timestamp", "desc").get().then((querySnapshot) => {
+        setMessages(querySnapshot.docs.map(function(doc) {
+            let message = doc.data();
+            message.id = doc.id;
+            return message;
+        }));
     });
 }
 

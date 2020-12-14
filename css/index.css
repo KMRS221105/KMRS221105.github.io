@@ -90,7 +90,10 @@ h1, h2, h3, h4, h5,
     position: relative;
     float: left;
     width: 33.33%;
-    padding: 1px;
+    padding-right: 1px;
+    padding-left: 1px;
+    padding-top: 1.3px;
+    padding-bottom: 1.3px;
 }
 
 .thumbnail-wrapper {
@@ -188,16 +191,26 @@ h1, h2, h3, h4, h5,
     width: auto;
 }
 
+.btn:not(:disabled):not(.disabled) {
+    box-shadow: none;
+}
+
 .message-add-button {
     width: 100%;
 }
 
-.message-card {
-    text-align: left;
+.submit-button {
+    text-align: right;
 }
 
-.message-delete-button {
+.message-item {
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
 
+.message-card {
+    text-align: left;
+    padding-bottom: 0px;
 }
 
 .message-name {
@@ -209,9 +222,17 @@ h1, h2, h3, h4, h5,
 }
 
 .message-time {
-
+    font-size: 12px;
 }
 
-.submit-button {
-    text-align:right;
+.message-more-button {
+    outline: none;
+    border: 1px solid #e7e7e7;
+    border-left: 0;
+    border-right: 0;
+    cursor: pointer;
+    height: 43px;
+    margin-top: 20px;
+    padding-top: 8px;
+    text-align: center;
 }
