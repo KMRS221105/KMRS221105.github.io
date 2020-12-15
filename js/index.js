@@ -56,13 +56,17 @@ function showMorePhotos() {
 
 function openGallery(photo_index) {
     $(".carousel").carousel(photo_index-1);
-    $("#gallery").css("display", "block");
-    disableScroll();
+    $("#gallery").show();
+//    $("#gallery").css("display", "block");
+    $("#invitation").hide();
+//    disableScroll();
 }
 
 function closeGallery() {
-    $("#gallery").css("display", "none");
-    enableScroll();
+    $("#gallery").hide();
+//    $("#gallery").css("display", "none");
+    $("#invitation").show();
+//    enableScroll();
 }
 
 function disableScroll() {
@@ -233,11 +237,15 @@ function openAllMessage() {
         );
     });
 
-    $("#all_message").css("display", "block");
-    disableScroll();
+    $("#all_message").show();
+//    $("#all_message").css("display", "block");
+    $("#invitation").hide();
+//    disableScroll();
 }
 
 function closeAllMessage() {
-    $("#all_message").css("display", "none");
-    enableScroll();
+    $("#all_message").hide();
+//    $("#all_message").css("display", "none");
+    $("#invitation").show();
+//    enableScroll();
 }

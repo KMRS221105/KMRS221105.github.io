@@ -152,6 +152,39 @@ gtag('config', 'G-VGB7W31YJF');
     </div>
 </div>
 
+<div id="gallery" class="gallery">
+    <div class="close-button">
+        <img class="close" src="resource/close.svg" onclick="javascript: closeGallery()">
+    </div>
+    <div id="photo_carousel" class="carousel slide" data-ride="carousel" data-interval="false">
+        <div id="carousel_list" class="carousel-inner"></div>
+        <a class="carousel-control-prev" href="#photo_carousel" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#photo_carousel" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+</div>
+
+<div id="all_message" class="all-message">
+    <div class="modal-header">
+        <h5 class="modal-title">축하 메시지</h5>
+        <button type="button" class="close" onclick="javascript: closeAllMessage()">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="all-message-list">
+        <ul id="all_message_list" class="list-group list-group-flush">
+        </ul>
+        <div class="message-all-button" onclick="javascript: closeAllMessage()">
+            닫기
+        </div>
+    </div>
+</div>
+
 <div id="groom_contact" class="modal fade" tabindex="-1" aria-hidden="true" data-backdrop="static">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
@@ -264,23 +297,6 @@ gtag('config', 'G-VGB7W31YJF');
     </div>
 </div>
 
-<div id="gallery" class="gallery">
-    <div class="close-button">
-        <img class="close" src="resource/close.svg" onclick="javascript: closeGallery()">
-    </div>
-    <div id="photo_carousel" class="carousel slide" data-ride="carousel" data-interval="false">
-        <div id="carousel_list" class="carousel-inner"></div>
-        <a class="carousel-control-prev" href="#photo_carousel" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#photo_carousel" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-        </a>
-    </div>
-</div>
-
 <div id="add_message" class="modal fade" tabindex="-1" aria-hidden="true" data-backdrop="static">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
@@ -350,22 +366,6 @@ gtag('config', 'G-VGB7W31YJF');
                     </div>
                 </form>
             </div>
-        </div>
-    </div>
-</div>
-
-<div id="all_message" class="all-message">
-    <div class="modal-header">
-        <h5 class="modal-title">축하 메시지</h5>
-        <button type="button" class="close" onclick="javascript: closeAllMessage()">
-            <span aria-hidden="true">&times;</span>
-        </button>
-    </div>
-    <div class="all-message-list">
-        <ul id="all_message_list" class="list-group list-group-flush">
-        </ul>
-        <div class="message-all-button" onclick="javascript: closeAllMessage()">
-            닫기
         </div>
     </div>
 </div>
