@@ -66,12 +66,12 @@ function closeGallery() {
 }
 
 function disableScroll() {
-//    $("body").css("overflow", "hidden");
-//    $("html").css("scrollTop", window.scrollY);
+    $("body").css("overflow", "hidden");
+    $("html").css("scrollTop", window.scrollY);
 }
 
 function enableScroll() {
-//    $("body").css("overflow", "visible");
+    $("body").css("overflow", "visible");
 }
 
 //  Messages
