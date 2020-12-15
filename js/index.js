@@ -27,19 +27,6 @@ function setPhotos(json) {
 
         if(index > VISIBLE_PHOTO_COUNT) $("#"+index).hide();
 
-//        if(index == 1) {
-//            $("#carousel_list").append(
-//                "<div class='carousel-item active'>" +
-//                    "<img class='d-block w-100' src='"+photo+"'>" +
-//                "</div>"
-//            );
-//        } else {
-//            $("#carousel_list").append(
-//                "<div class='carousel-item'>" +
-//                    "<img class='d-block w-100' src='"+photo+"'>" +
-//                "</div>"
-//            );
-//        }
         if(index == 1) {
             $("#carousel_list").append(
                 "<div class='carousel-item active'>" +
