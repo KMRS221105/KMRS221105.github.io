@@ -191,8 +191,39 @@ h1, h2, h3, h4, h5,
     width: auto;
 }
 
+.carousel {
+    height: calc(100% - 50px);
+}
+
+.carousel-inner,
+.carousel-control-prev,
+.carousel-control-next {
+    height: 100%;
+}
+
+.carousel-item {
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+
+.d-block {
+    max-height: 100%;
+    max-width: 100%;
+    width: auto;
+    height: auto;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.close:focus,
 .btn:not(:disabled):not(.disabled) {
     box-shadow: none;
+    outline: none;
 }
 
 .message-add-button {
@@ -213,6 +244,14 @@ h1, h2, h3, h4, h5,
     text-align: left;
     padding-top: 20px;
     padding-bottom: 20px;
+}
+
+.message-row {
+    margin: 0px;
+}
+
+.message-col1, .message-col2 {
+    padding: 0px;
 }
 
 .message-name {

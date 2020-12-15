@@ -76,11 +76,11 @@ gtag('config', 'G-VGB7W31YJF');
     <div id="contact" class="container" data-aos="fade-up">
         <div class="row">
             <div class="col">
-                <img src="resource/groom.jpeg" class="round-image" data-toggle="modal" data-target="#groom_contact">
+                <img src="resource/groom.jpg" class="round-image" data-toggle="modal" data-target="#groom_contact">
                 <p class="contact-text" data-toggle="modal" data-target="#groom_contact">신랑측에 연락하기</p>
             </div>
             <div class="col">
-                <img src="resource/bride.jpeg" class="round-image" data-toggle="modal" data-target="#bride_contact">
+                <img src="resource/bride.jpg" class="round-image" data-toggle="modal" data-target="#bride_contact">
                 <p class="contact-text" data-toggle="modal" data-target="#bride_contact">신부측에 연락하기</p>
             </div>
         </div>
@@ -108,7 +108,7 @@ gtag('config', 'G-VGB7W31YJF');
         <h4>오시는 길</h4>
         <div class="height-margin"></div>
 
-        <img class="map" src="resource/map.jpeg">
+        <img class="map" src="resource/map.jpg">
         <br><br>
 
         <div class="map-info">
@@ -266,7 +266,7 @@ gtag('config', 'G-VGB7W31YJF');
 
 <div id="gallery" class="gallery">
     <div class="close-button">
-        <img class="close" src="resource/closew.svg" onclick="javascript: closeGallery()">
+        <img class="close" src="resource/close.svg" onclick="javascript: closeGallery()">
     </div>
     <div id="photo_carousel" class="carousel slide" data-ride="carousel" data-interval="false">
         <div id="carousel_list" class="carousel-inner"></div>
@@ -308,9 +308,9 @@ gtag('config', 'G-VGB7W31YJF');
                     </div>
                     <div class="form-group">
                         <label for="password">비밀번호</label>
-                        <input id="password" class="form-control" type="text" placeholder="4자리 숫자" maxlength="4" onkeypress="javascript: validateNumber()" required>
+                        <input id="password" class="form-control" type="text" placeholder="4자리 숫자" minlength="4" maxlength="4" onkeypress="javascript: validateNumber()" required>
                         <div class="invalid-feedback">
-                            비밀번호를 입력해주세요.
+                            4자리 숫자의 비밀번호를 입력해주세요.
                         </div>
                         <small class="form-text text-muted">
                             메시지를 삭제할 경우 비밀번호가 필요합니다.
@@ -339,9 +339,9 @@ gtag('config', 'G-VGB7W31YJF');
                     <div class="form-group">
                         <input id="form_index" type="hidden" value="">
                         <label for="password_check">비밀번호</label>
-                        <input id="password_check" class="form-control" type="text" placeholder="4자리 숫자" maxlength="4" onkeypress="javascript: validateNumber()" required>
+                        <input id="password_check" class="form-control" type="text" placeholder="4자리 숫자" minlength="4" maxlength="4" onkeypress="javascript: validateNumber()" required>
                         <div class="invalid-feedback">
-                            비밀번호를 입력해주세요.
+                            4자리 숫자의 비밀번호를 입력해주세요.
                         </div>
                         <div id="alert"></div>
                     </div>

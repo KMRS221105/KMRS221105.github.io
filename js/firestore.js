@@ -36,18 +36,6 @@ function dbCreateMessage(input_name, input_comment, input_password) {
     });
 }
 
-//function dbReadMessage(message_id) {
-//    db.collection("message").doc(message_id).get().then(function(doc) {
-//        if (doc.exists) {
-//            console.log("Document data:", doc.data());
-//        } else {
-//            console.log("No such document!");
-//        }
-//    }).catch(function(error) {
-//        console.log("Error getting document:", error);
-//    });
-//}
-
 function dbDeleteMessage(message_id) {
     db.collection("message").doc(message_id).delete().then(function() {
         console.log("Document successfully deleted!");

@@ -27,16 +27,29 @@ function setPhotos(json) {
 
         if(index > VISIBLE_PHOTO_COUNT) $("#"+index).hide();
 
+//        if(index == 1) {
+//            $("#carousel_list").append(
+//                "<div class='carousel-item active'>" +
+//                    "<img class='d-block w-100' src='"+photo+"'>" +
+//                "</div>"
+//            );
+//        } else {
+//            $("#carousel_list").append(
+//                "<div class='carousel-item'>" +
+//                    "<img class='d-block w-100' src='"+photo+"'>" +
+//                "</div>"
+//            );
+//        }
         if(index == 1) {
             $("#carousel_list").append(
                 "<div class='carousel-item active'>" +
-                    "<img class='d-block w-100' src='"+photo+"'>" +
+                    "<img class='d-block' src='"+photo+"'>" +
                 "</div>"
             );
         } else {
             $("#carousel_list").append(
                 "<div class='carousel-item'>" +
-                    "<img class='d-block w-100' src='"+photo+"'>" +
+                    "<img class='d-block' src='"+photo+"'>" +
                 "</div>"
             );
         }
@@ -162,11 +175,11 @@ function setMessages(messages) {
         $("#message_list").append(
             "<li id='m"+index+"' class='list-group-item message-item'>" +
                 "<div class='card-body message-card'>" +
-                    "<div class='row'>" +
-                        "<div class='col'>" +
+                    "<div class='row message-row'>" +
+                        "<div class='col message-col1'>" +
                             "<h5 class='card-title message-name'>" + message["name"] + "</h5>" +
                         "</div>" +
-                        "<div class='col'>" +
+                        "<div class='col-1 message-col2'>" +
                             "<button type='button' class='close' data-toggle='modal' data-target='#delete_message' onclick='javascript: initializeDeleteMessageForm(" + index + ")'>" +
                                 "<span aria-hidden='true'>&times;</span>" +
                             "</button>" +
@@ -178,6 +191,10 @@ function setMessages(messages) {
             "</li>"
         );
     });
+
+    if($("#all_message").css("display") == "block") {
+        openAllMessage();
+    }
 }
 
 function validateNumber() {
@@ -212,11 +229,11 @@ function openAllMessage() {
         $("#all_message_list").append(
             "<li id='m"+index+"' class='list-group-item message-item'>" +
                 "<div class='card-body message-card'>" +
-                    "<div class='row'>" +
-                        "<div class='col'>" +
+                    "<div class='row message-row'>" +
+                        "<div class='col message-col1'>" +
                             "<h5 class='card-title message-name'>" + message["name"] + "</h5>" +
                         "</div>" +
-                        "<div class='col'>" +
+                        "<div class='col-1 message-col2'>" +
                             "<button type='button' class='close' data-toggle='modal' data-target='#delete_message' onclick='javascript: initializeDeleteMessageForm(" + index + ")'>" +
                                 "<span aria-hidden='true'>&times;</span>" +
                             "</button>" +
