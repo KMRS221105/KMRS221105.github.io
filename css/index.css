@@ -149,7 +149,11 @@ h1, h2, h3, h4, h5,
     text-align: left;
     padding-left: 30px;
     padding-right: 30px;
-    font-size: 13px;
+    font-size: 0.813rem;
+}
+
+.map-venue {
+    font-size: 1rem;
 }
 
 .card-body {
@@ -293,19 +297,19 @@ h1, h2, h3, h4, h5,
 }
 
 .message-name {
-    font-size: 13px;
+    font-size: 0.813rem;
     margin: 0px;
     padding-top: 4px;
 }
 
 .message-comment {
-    font-size: 13px;
+    font-size: 0.813rem;
     margin-top: 5px;
     margin-bottom: 12px;
 }
 
 .message-time {
-    font-size: 12px;
+    font-size: 0.75rem;
     margin: 0px;
 }
 
