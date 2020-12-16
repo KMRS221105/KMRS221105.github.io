@@ -56,26 +56,32 @@ function showMorePhotos() {
 
 function openGallery(photo_index) {
     $(".carousel").carousel(photo_index-1);
-    $("#gallery").show();
-//    $("#gallery").css("display", "block");
-    $("#invitation").hide();
-//    disableScroll();
+    $("#gallery").css("display", "block");
+    disableScroll();
+
+//    $("#gallery").show();
+//    $("#invitation").hide();
 }
 
 function closeGallery() {
-    $("#gallery").hide();
-//    $("#gallery").css("display", "none");
-    $("#invitation").show();
-//    enableScroll();
+    $("#gallery").css("display", "none");
+    enableScroll();
+
+//    $("#gallery").hide();
+//    $("#invitation").show();
+//    var offset = $("#photo").offset();
+//    $("html, body").scrollTop(offset);
 }
 
 function disableScroll() {
-    $("body").css("overflow", "hidden");
+    $("html, body").css("overflow", "hidden");
+//    $("body").css("overflow", "hidden");
     $("html").css("scrollTop", window.scrollY);
 }
 
 function enableScroll() {
-    $("body").css("overflow", "visible");
+    $("html, body").css("overflow", "visible");
+//    $("body").css("overflow", "visible");
 }
 
 //  Messages
