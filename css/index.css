@@ -206,7 +206,6 @@ h1, h2, h3, h4, h5,
     height: 100%;
     width: 100%;
     position: relative;
-    border: solid 1px white;
 }
 
 .d-block {
@@ -220,6 +219,7 @@ h1, h2, h3, h4, h5,
     left: 0;
     right: 0;
     margin: auto;
+    touch-action: auto;
 }
 
 .carousel .carousel-item {

@@ -17,14 +17,14 @@ function setPhotos(json) {
 
     $.each(PHOTOS, function(index, photo) {
         $("#thumbnail_list").append(
-            "<div id='"+index+"' class='thumbnail-box'>" +
+            "<div id='t"+index+"' class='thumbnail-box'>" +
             "<div class='thumbnail-wrapper'>" +
                 "<img class='thumbnail' src='"+photo+"' onclick='javascript: openGallery("+index+")'>" +
             "</div>" +
             "</div>"
         );
 
-        if(index > VISIBLE_PHOTO_COUNT) $("#"+index).hide();
+        if(index > VISIBLE_PHOTO_COUNT) $("#t"+index).hide();
 
         if(index == 1) {
             $("#carousel_list").append(
@@ -48,7 +48,7 @@ $.getJSON("resource/photo.json", function(json) {
 
 function showMorePhotos() {
     for(index=VISIBLE_PHOTO_COUNT+1; index<=TOTAL_PHOTO_COUNT; index++) {
-        $("#"+index).show();
+        $("#t"+index).show();
     }
     $("#more_button").hide();
 }
@@ -157,7 +157,7 @@ function setMessages(messages) {
         if(index == VISIBLE_MESSAGE_COUNT) return false;
 
         $("#message_list").append(
-            "<li id='m"+index+"' class='list-group-item message-item'>" +
+            "<li class='list-group-item message-item'>" +
                 "<div class='card-body message-card'>" +
                     "<div class='row message-row'>" +
                         "<div class='col message-col1'>" +
@@ -211,7 +211,7 @@ function openAllMessage() {
 
     $.each(MESSAGES, function(index, message) {
         $("#all_message_list").append(
-            "<li id='m"+index+"' class='list-group-item message-item'>" +
+            "<li class='list-group-item message-item'>" +
                 "<div class='card-body message-card'>" +
                     "<div class='row message-row'>" +
                         "<div class='col message-col1'>" +
