@@ -6,6 +6,7 @@ $(document).ready(function() {
     try {
         dbInitialize();
         updateMessages();
+        $(".copy").tooltip({ trigger : "manual" });
     } catch (error) {
     }
 });
@@ -71,6 +72,19 @@ function disableScroll() {
 
 function enableScroll() {
     $("body").css("overflow", "visible");
+}
+
+function copyAccount(account_info, object) {
+    $("#account_info").append("<textarea id='temp'>"+account_info+"</textarea>");
+    $("#temp")[0].select();
+    $("#temp")[0].setSelectionRange(0, 99999);
+    document.execCommand("copy");
+    $("#temp").remove();
+
+    $("#"+object).tooltip("show");
+    setTimeout(function() {
+        $("#"+object).tooltip("hide");
+    }, 1000);
 }
 
 //  Messages

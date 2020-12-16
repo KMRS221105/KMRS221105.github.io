@@ -230,15 +230,35 @@ h1, h2, h3, h4, h5,
     transition-duration: 0.2s;
 }
 
-.close:focus,
-.btn:not(:disabled):not(.disabled) {
-    box-shadow: none;
-    outline: none;
+.account-table {
+    width: 100%;
+}
+
+.account-td1 {
+    border-right: 1px solid #ececec;
+    width: 30%;
+    text-align: center;
+}
+
+.account-td2 {
+    width: 70%;
+    text-align: center;
+}
+
+.account-div {
+    text-align: left;
+    display: inline-block;
 }
 
 .message-add-button {
     width: 100%;
     margin-bottom: 10px;
+}
+
+.close:focus,
+.btn:not(:disabled):not(.disabled) {
+    box-shadow: none;
+    outline: none;
 }
 
 .submit-button {
