@@ -206,9 +206,7 @@ h1, h2, h3, h4, h5,
     height: calc(100% - 40px);
 }
 
-.carousel-inner,
-.carousel-control-prev,
-.carousel-control-next {
+.carousel-inner {
     height: 100%;
 }
 
@@ -216,6 +214,11 @@ h1, h2, h3, h4, h5,
     height: calc(100% - 40px);
     width: 100%;
     position: relative;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    height: calc(100% - 40px);
 }
 
 .d-block {

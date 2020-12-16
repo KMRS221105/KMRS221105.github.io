@@ -1,7 +1,3 @@
-let PHOTOS = "";
-let VISIBLE_PHOTO_COUNT = "";
-let TOTAL_PHOTO_COUNT = "";
-
 $(document).ready(function() {
     try {
         dbInitialize();
@@ -10,6 +6,10 @@ $(document).ready(function() {
     } catch (error) {
     }
 });
+
+let PHOTOS = "";
+let VISIBLE_PHOTO_COUNT = "";
+let TOTAL_PHOTO_COUNT = "";
 
 function setPhotos(json) {
     PHOTOS = json["photo_list"];
@@ -65,30 +65,17 @@ function closeGallery() {
     enableScroll();
 }
 
-let scrollPosition = "";
+let POSITION = "";
 
 function disableScroll() {
-    scrollPosition = window.pageYOffset;
+    POSITION = window.pageYOffset;
     $("body").addClass("freeze");
-    $("body").css("top", (-1)*scrollPosition + "px");
-
-//    $("html, body").css("scrollTop", window.scrollY);
-//    $('body').addClass('freeze').on('scroll touchmove mousewheel', function(e){
-//            e.preventDefault();
-//    });
-
-
-//    $("body").css("overflow", "hidden");
-//    $("html").css("scrollTop", window.scrollY);
+    $("body").css("top", (-1)*POSITION + "px");
 }
 
 function enableScroll() {
     $("body").removeClass("freeze");
-    window.scrollTo(0, scrollPosition);
-
-//    $('body').removeClass('freeze').off('scroll touchmove mousewheel');
-
-//    $("body").css("overflow", "visible");
+    window.scrollTo(0, POSITION);
 }
 
 function copyAccount(account_info, object) {
@@ -103,11 +90,6 @@ function copyAccount(account_info, object) {
         $("#"+object).tooltip("hide");
     }, 1000);
 }
-
-//  Messages
-let MESSAGES = "";
-let VISIBLE_MESSAGE_COUNT = "";
-let TOTAL_MESSAGE_COUNT = "";
 
 (function() {
   'use strict';
@@ -177,10 +159,11 @@ function updateMessages() {
     }
 }
 
+let MESSAGES = "";
+let VISIBLE_MESSAGE_COUNT = 5;
+
 function setMessages(messages) {
     MESSAGES = messages;
-    TOTAL_MESSAGE_COUNT = Object.keys(MESSAGES).length;
-    VISIBLE_MESSAGE_COUNT = 5;
 
     $("#message_list").empty();
 
@@ -262,6 +245,7 @@ function openAllMessage() {
     });
 
     $("#all_message").css("display", "block");
+    $("#all_message")[0].scrollTo(0, 0);
     disableScroll();
 }
 
