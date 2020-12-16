@@ -65,18 +65,28 @@ function closeGallery() {
     enableScroll();
 }
 
+let scrollPosition = "";
+
 function disableScroll() {
-    $('body').addClass('freeze').on('scroll touchmove mousewheel', function(e){
-            e.preventDefault();
-    });
-    $("html, body").css("scrollTop", window.scrollY);
+    scrollPosition = window.pageYOffset;
+    $("body").addClass("freeze");
+    $("body").css("top", (-1)*scrollPosition + "px");
+
+//    $("html, body").css("scrollTop", window.scrollY);
+//    $('body').addClass('freeze').on('scroll touchmove mousewheel', function(e){
+//            e.preventDefault();
+//    });
+
 
 //    $("body").css("overflow", "hidden");
 //    $("html").css("scrollTop", window.scrollY);
 }
 
 function enableScroll() {
-    $('body').removeClass('freeze').off('scroll touchmove mousewheel');
+    $("body").removeClass("freeze");
+    window.scrollTo(0, scrollPosition);
+
+//    $('body').removeClass('freeze').off('scroll touchmove mousewheel');
 
 //    $("body").css("overflow", "visible");
 }

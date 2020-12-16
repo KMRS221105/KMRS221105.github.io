@@ -27,10 +27,8 @@ h1, h2, h3, h4, h5,
 }
 
 .freeze {
-    height:100%;
-    min-height:100%;
-    overflow: hidden !important;
-    touch-action:none;
+    overflow: hidden;
+    position: fixed;
 }
 
 .container {
