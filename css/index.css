@@ -183,7 +183,7 @@ h1, h2, h3, h4, h5,
 
 .close-button {
     text-align: center;
-    height: 30px;
+    height: 40px;
 }
 
 .close {
@@ -193,7 +193,7 @@ h1, h2, h3, h4, h5,
 }
 
 .carousel {
-    height: calc(100% - 50px);
+    height: calc(100% - 40px);
 }
 
 .carousel-inner,
@@ -203,7 +203,7 @@ h1, h2, h3, h4, h5,
 }
 
 .carousel-item {
-    height: calc(100% - 30px);
+    height: calc(100% - 40px);
     width: 100%;
     position: relative;
 }
