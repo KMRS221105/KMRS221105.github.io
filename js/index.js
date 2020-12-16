@@ -66,12 +66,19 @@ function closeGallery() {
 }
 
 function disableScroll() {
-    $("body").css("overflow", "hidden");
-    $("html").css("scrollTop", window.scrollY);
+    $('body').addClass('freeze').on('scroll touchmove mousewheel', function(e){
+            e.preventDefault();
+    });
+    $("html, body").css("scrollTop", window.scrollY);
+
+//    $("body").css("overflow", "hidden");
+//    $("html").css("scrollTop", window.scrollY);
 }
 
 function enableScroll() {
-    $("body").css("overflow", "visible");
+    $('body').removeClass('freeze').off('scroll touchmove mousewheel');
+
+//    $("body").css("overflow", "visible");
 }
 
 function copyAccount(account_info, object) {
