@@ -223,7 +223,7 @@ h1, h2, h3, h4, h5,
 }
 
 .carousel .carousel-item {
-    transition-duration: 0.3s;
+    transition-duration: 0.1s;
 }
 
 .close:focus,

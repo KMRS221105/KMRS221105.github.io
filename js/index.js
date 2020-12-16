@@ -7,7 +7,6 @@ $(document).ready(function() {
         dbInitialize();
         updateMessages();
     } catch (error) {
-        console.error(error);
     }
 });
 
@@ -58,30 +57,20 @@ function openGallery(photo_index) {
     $(".carousel").carousel(photo_index-1);
     $("#gallery").css("display", "block");
     disableScroll();
-
-//    $("#gallery").show();
-//    $("#invitation").hide();
 }
 
 function closeGallery() {
     $("#gallery").css("display", "none");
     enableScroll();
-
-//    $("#gallery").hide();
-//    $("#invitation").show();
-//    var offset = $("#photo").offset();
-//    $("html, body").scrollTop(offset);
 }
 
 function disableScroll() {
-    $("html, body").css("overflow", "hidden");
-//    $("body").css("overflow", "hidden");
+    $("body").css("overflow", "hidden");
     $("html").css("scrollTop", window.scrollY);
 }
 
 function enableScroll() {
-    $("html, body").css("overflow", "visible");
-//    $("body").css("overflow", "visible");
+    $("body").css("overflow", "visible");
 }
 
 //  Messages
@@ -133,7 +122,6 @@ function submitForm(form_id) {
             }
         }
     } catch (error) {
-        console.error(error);
     }
 }
 
@@ -155,7 +143,6 @@ function updateMessages() {
     try {
         dbReadAllMessages();
     } catch (error) {
-        console.error(error);
     }
 }
 
@@ -243,15 +230,11 @@ function openAllMessage() {
         );
     });
 
-    $("#all_message").show();
-//    $("#all_message").css("display", "block");
-    $("#invitation").hide();
-//    disableScroll();
+    $("#all_message").css("display", "block");
+    disableScroll();
 }
 
 function closeAllMessage() {
-    $("#all_message").hide();
-//    $("#all_message").css("display", "none");
-    $("#invitation").show();
-//    enableScroll();
+    $("#all_message").css("display", "none");
+    enableScroll();
 }

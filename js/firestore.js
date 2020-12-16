@@ -28,19 +28,15 @@ function dbCreateMessage(input_name, input_comment, input_password) {
         timestamp: firebase.firestore.FieldValue.serverTimestamp()
     })
     .then(function(docRef) {
-        console.log("Document written with ID: ", docRef.id);
         updateMessages();
     })
     .catch(function(error) {
-        console.error("Error adding document: ", error);
     });
 }
 
 function dbDeleteMessage(message_id) {
     db.collection("message").doc(message_id).delete().then(function() {
-        console.log("Document successfully deleted!");
         updateMessages();
     }).catch(function(error) {
-        console.error("Error removing document: ", error);
     });
 }
