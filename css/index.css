@@ -181,6 +181,10 @@ h1, h2, h3, h4, h5,
     overflow: auto;
 }
 
+.carousel.pointer-event {
+  touch-action: auto;
+}
+
 .close-button {
     text-align: center;
     height: 40px;
@@ -206,7 +210,6 @@ h1, h2, h3, h4, h5,
     height: calc(100% - 40px);
     width: 100%;
     position: relative;
-    touch-action: pinch-zoom;
 }
 
 .d-block {
