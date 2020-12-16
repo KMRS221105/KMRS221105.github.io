@@ -219,11 +219,11 @@ h1, h2, h3, h4, h5,
     left: 0;
     right: 0;
     margin: auto;
-    touch-action: auto;
+    touch-action: pinch-zoom;
 }
 
 .carousel .carousel-item {
-    transition-duration: 0.1s;
+    transition-duration: 0.2s;
 }
 
 .close:focus,
