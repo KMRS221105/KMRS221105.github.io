@@ -182,7 +182,8 @@ h1, h2, h3, h4, h5,
 }
 
 .carousel.pointer-event {
-  touch-action: auto;
+    -ms-touch-action : pan-y pinch-zoom;
+    touch-action: pan-y pinch-zoom;
 }
 
 .close-button {
