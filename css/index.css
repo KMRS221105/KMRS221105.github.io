@@ -14,16 +14,18 @@
 }
 
 div, p {
-    font-family: DX경필명조M
+    font-family: DX경필명조M;
 }
 
 h1, h2, h3, h4, h5,
 .bold {
-    font-family: DX경필명조B
+    font-family: DX경필명조B;
 }
 
 .map-title {
-    font-family: DX경필명조B
+    font-family: DX경필명조B;
+    font-weight: 800;
+
 }
 
 .container {
@@ -288,6 +290,7 @@ h1, h2, h3, h4, h5,
     font-size: 13px;
     margin: 0px;
     padding-top: 4px;
+    font-weight: 800;
 }
 
 .message-comment {
