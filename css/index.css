@@ -24,8 +24,6 @@ h1, h2, h3, h4, h5,
 
 .map-title {
     font-family: DX경필명조B;
-    font-weight: 800;
-
 }
 
 .container {
@@ -290,7 +288,6 @@ h1, h2, h3, h4, h5,
     font-size: 13px;
     margin: 0px;
     padding-top: 4px;
-    font-weight: 800;
 }
 
 .message-comment {
