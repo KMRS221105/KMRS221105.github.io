@@ -161,9 +161,11 @@ function updateMessages() {
 
 let MESSAGES = "";
 let VISIBLE_MESSAGE_COUNT = 5;
+let TOTAL_MESSAGE_COUNT = "";
 
 function setMessages(messages) {
     MESSAGES = messages;
+    TOTAL_MESSAGE_COUNT = messages.length;
 
     $("#message_list").empty();
 
@@ -189,6 +191,10 @@ function setMessages(messages) {
             "</li>"
         );
     });
+
+//    if(TOTAL_MESSAGE_COUNT <= VISIBLE_MESSAGE_COUNT) {
+//        $(".message-all-button").css("display", "hidden");
+//    }
 
     if($("#all_message").css("display") == "block") {
         openAllMessage();
