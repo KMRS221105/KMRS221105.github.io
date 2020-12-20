@@ -78,16 +78,16 @@ function enableScroll() {
     window.scrollTo(0, POSITION);
 }
 
-function copyAccount(account_info, object) {
-    $("#account_info").append("<textarea id='temp'>"+account_info+"</textarea>");
+function copyAccount(modal_id, object_id, account_num) {
+    $("#"+modal_id).append("<textarea id='temp'>"+account_num+"</textarea>");
     $("#temp")[0].select();
     $("#temp")[0].setSelectionRange(0, 99999);
     document.execCommand("copy");
     $("#temp").remove();
 
-    $("#"+object).tooltip("show");
+    $("#"+object_id).tooltip("show");
     setTimeout(function() {
-        $("#"+object).tooltip("hide");
+        $("#"+object_id).tooltip("hide");
     }, 1000);
 }
 
@@ -165,7 +165,7 @@ let TOTAL_MESSAGE_COUNT = "";
 
 function setMessages(messages) {
     MESSAGES = messages;
-    TOTAL_MESSAGE_COUNT = messages.length;
+    TOTAL_MESSAGE_COUNT = Object.keys(MESSAGES).length;
 
     $("#message_list").empty();
 
@@ -192,9 +192,11 @@ function setMessages(messages) {
         );
     });
 
-//    if(TOTAL_MESSAGE_COUNT <= VISIBLE_MESSAGE_COUNT) {
-//        $(".message-all-button").css("display", "hidden");
-//    }
+    if(TOTAL_MESSAGE_COUNT <= VISIBLE_MESSAGE_COUNT) {
+        $(".message-all-button").hide();
+    } else {
+        $(".message-all-button").show();
+    }
 
     if($("#all_message").css("display") == "block") {
         openAllMessage();

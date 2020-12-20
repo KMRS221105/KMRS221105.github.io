@@ -155,7 +155,8 @@ gtag('config', 'G-VGB7W31YJF');
         <br>
         <p>축복의 의미로 축의금을 전달해보세요.</p>
         <div class="height-margin"></div>
-        <button type="button" class="btn btn-dark message-add-button" data-toggle="modal" data-target="#account_info">계좌번호 확인하기</button>
+        <button type="button" class="btn btn-dark message-add-button" data-toggle="modal" data-target="#groom_account">신랑측 계좌번호 보기</button>
+        <button type="button" class="btn btn-dark message-add-button" data-toggle="modal" data-target="#bride_account">신부측 계좌번호 보기</button>
         <div class="height-margin"></div>
     </div>
 
@@ -325,11 +326,11 @@ gtag('config', 'G-VGB7W31YJF');
     </div>
 </div>
 
-<div id="account_info" class="modal fade" tabindex="-1" aria-hidden="true" data-backdrop="static">
+<div id="groom_account" class="modal fade" tabindex="-1" aria-hidden="true" data-backdrop="static">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">계좌번호 확인하기</h5>
+                <h5 class="modal-title">신랑측 계좌번호 보기</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -343,11 +344,11 @@ gtag('config', 'G-VGB7W31YJF');
                                 <td class="account-td1">
                                     <div class="account-div">
                                         국민 정연도<br>
-                                        11111-11-11111
+                                        111111-11-111111
                                     </div>
                                 </td>
                                 <td class="account-td2">
-                                    <a href="javascript: copyAccount('111111111111', 'copy1')"><img src="resource/copy.svg"> <span id="copy1" class="copy" data-original-title="복사완료!">복사하기</span></a>
+                                    <a href="javascript: copyAccount('groom_account', 'copy1', '1111111111111')"><img src="resource/copy.svg"> <span id="copy1" class="copy" data-original-title="복사완료!">복사하기</span></a>
                                 </td>
                             </tr>
                             </tbody>
@@ -363,18 +364,32 @@ gtag('config', 'G-VGB7W31YJF');
                                 <td class="account-td1">
                                     <div class="account-div">
                                         국민 정왕교<br>
-                                        22222-22-22222
+                                        222222-22-222222
                                     </div>
                                 </td>
                                 <td class="account-td2">
-                                    <a href="javascript: copyAccount('222222222222', 'copy2')"><img src="resource/copy.svg"> <span id="copy2" class="copy" data-original-title="복사완료!">복사하기</span></a>
+                                    <a href="javascript: copyAccount('groom_account', 'copy2', '22222222222222')"><img src="resource/copy.svg"> <span id="copy2" class="copy" data-original-title="복사완료!">복사하기</span></a>
                                 </td>
                             </tr>
                             </tbody>
                         </table>
                     </div>
                 </div>
-                <br>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="bride_account" class="modal fade" tabindex="-1" aria-hidden="true" data-backdrop="static">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">신부측 계좌번호 보기</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
                 <div class="card">
                     <div class="card-body">
                         <table class="contact-table" cellspacing="0" cellpadding="0">
@@ -383,11 +398,11 @@ gtag('config', 'G-VGB7W31YJF');
                                 <td class="account-td1">
                                     <div class="account-div">
                                         국민 유석열<br>
-                                        33333-33-33333
+                                        333333-33-333333
                                     </div>
                                 </td>
                                 <td class="account-td2">
-                                    <a href="javascript: copyAccount('333333333333', 'copy3')"><img src="resource/copy.svg"> <span id="copy3" class="copy" data-original-title="복사완료!">복사하기</span></a>
+                                    <a href="javascript: copyAccount('bride_account', 'copy3', '33333333333333')"><img src="resource/copy.svg"> <span id="copy3" class="copy" data-original-title="복사완료!">복사하기</span></a>
                                 </td>
                             </tr>
                             </tbody>
@@ -403,11 +418,11 @@ gtag('config', 'G-VGB7W31YJF');
                                 <td class="account-td1">
                                     <div class="account-div">
                                         국민 유정은<br>
-                                        44444-44-44444
+                                        444444-44-444444
                                     </div>
                                 </td>
                                 <td class="account-td2">
-                                    <a href="javascript: copyAccount('444444444444', 'copy4')"><img src="resource/copy.svg"> <span id="copy4" class="copy" data-original-title="복사완료!">복사하기</span></a>
+                                    <a href="javascript: copyAccount('bride_account', 'copy4', '44444444444444')"><img src="resource/copy.svg"> <span id="copy4" class="copy" data-original-title="복사완료!">복사하기</span></a>
                                 </td>
                             </tr>
                             </tbody>
