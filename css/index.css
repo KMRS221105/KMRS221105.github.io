@@ -146,10 +146,15 @@ h1, h2, h3, h4, h5,
 }
 
 .map-info {
-    text-align: left;
     padding-left: 30px;
     padding-right: 30px;
     font-size: 0.813rem;
+}
+
+.map-info-inner {
+    text-align: left;
+    display: inline-block;
+    margin-left: -50px;
 }
 
 .map-venue {
