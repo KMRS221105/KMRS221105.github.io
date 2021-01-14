@@ -26,6 +26,10 @@ h1, h2, h3, h4, h5,
     font-family: DX경필명조B;
 }
 
+.small {
+    font-size: 0.8rem;
+}
+
 .freeze {
     overflow: hidden;
     position: fixed;
