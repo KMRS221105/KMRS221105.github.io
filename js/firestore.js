@@ -2,9 +2,9 @@ let db;
 
 function dbInitialize() {
     firebase.initializeApp({
-      apiKey: "AIzaSyBUZil_3m-xEDFoqB499LOhSZjQF7qhsEk",
-      authDomain: "wedding-invitation-5e95e.firebaseapp.com",
-      projectId: "wedding-invitation-5e95e"
+      apiKey: "AIzaSyAtYHZDkMmkInnpEx4juS7QoN3NWjQ-n0E",
+      authDomain: "lkrs221105wd.firebaseapp.com",
+      projectId: "lkrs221105wd"
     });
 
     db = firebase.firestore();
